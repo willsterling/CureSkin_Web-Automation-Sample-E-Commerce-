@@ -1,15 +1,27 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from app.application import Application
+# from selenium.webdriver.chrome.options import ChromeOptions
+# from selenium.webdriver.chrome.service import Service
 
 
 def browser_init(context):
     """
     :param context: Behave context
     """
-    context.driver = webdriver.Chrome()
-    # context.browser = webdriver.Safari()
-    # context.browser = webdriver.Firefox()
+    # context.driver = webdriver.Chrome()
+    # context.driver = webdriver.Safari()
+    context.driver = webdriver.Firefox()
+
+    # HEADLESS MODEg
+    # service = Service('/Users/willsterling/careerist/wc-qa_auto-cureskin/chromedriver')
+    #
+    # options = webdriver.ChromeOptions()
+    # options.add_argument('--headless')
+    # context.driver = webdriver.Chrome(
+    #     chrome_options=options,
+    #     service=service
+    # )
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)

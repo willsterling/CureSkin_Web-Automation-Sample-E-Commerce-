@@ -7,9 +7,13 @@ class Header(Page):
     SEARCH_BTN = (By.CSS_SELECTOR, 'svg.icon.icon-search.modal__toggle-open')
 
 
+    def click_search(self):
+        self.wait_for_element_appear(*self.SEARCH_BTN)
+        self.click(*self.SEARCH_BTN)
+
+
     def input_search_text(self, text):
         self.input_text(text, *self.MAIN_SEARCH_BAR)
 
-    def click_search(self):
-        self.click(*self.SEARCH_BTN)
+
 

@@ -14,6 +14,10 @@ def input_search_word(context, search_word):
 def click_search_button(context):
     context.app.header.click_search()
 
+@when('Close pop up')
+def close_popup(context):
+    context.app.main_page.close_popup()
+
 
 @then('Verify search results are shown')
 def verify_search_results(context):
