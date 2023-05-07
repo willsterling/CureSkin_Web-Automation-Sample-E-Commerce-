@@ -5,6 +5,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.service import Service
 
 
+#Allure general command:
+# behave - f
+# allure_behave.formatter: AllureFormatter - o
+# allure_test_results / features /
+#Note: command to show Allure results: allure serve allure_test_results
+
+
 def browser_init(context, test_name):
     """
     :param context: Behave context
