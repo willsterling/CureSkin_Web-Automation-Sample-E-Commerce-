@@ -18,7 +18,7 @@ class Page:
         return self.driver.find_elements(*locator)
 
     def click(self, *locator):
-        self.driver.implicitly_wait(1) #added for headless mode
+        self.driver.implicitly_wait(10) #added for headless mode
         self.driver.find_element(*locator).click()
 
     def input_text(self, text, *locator):

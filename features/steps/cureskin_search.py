@@ -14,12 +14,14 @@ def input_search_word(context, search_word):
 def click_search_button(context):
     context.app.header.click_search()
 
-@when('Close pop up')
-def close_popup(context):
+
+# '.popup-close'
+@when('Close popup window')
+def close_modal_window(context):
     context.app.main_page.close_popup()
 
 
-@then('Verify search results are shown')
-def verify_search_results(context):
-    context.app.search_results_page.verify_search_results_shown()
+@then('Verify search results are showing {expected_result} elements')
+def verify_search_results(context, expected_result):
+    context.app.search_results_page.verify_search_results_shown(expected_result)
 
